@@ -1,0 +1,51 @@
+## java -jar application_name.jar -> parent command
+## -Dspring.config.location = C:\application.yml -> change application.yml config file location
+## --server.port=9090 -> Tomcat started on port: 9090
+## --spring.profile.active=dev --> run application on selected active profile
+## server.port = 0 -> Run tomcat application on random port
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: Introduction-Local
+  boot:
+    admin:
+      client:
+        url: http://localhost:9090/
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    instance:
+    preferIpAddress: true
+
+
+
+#logging:
+#  file:
+#    name: server.log
+
+## Define multiply profile settings on one config file
+#spring:
+#  application:
+#    name: Introduction-Local
+#server:
+#  port: 8080
+#
+#---
+#spring:
+#  profiles: dev
+#  application:
+#    name: Introduction-dev
+#server:
+#  port: 8585
+#
+#---
+#spring:
+#  profiles: prod
+#  application:
+#    name: Introduction-prod
+#server:
+#  port: 9090

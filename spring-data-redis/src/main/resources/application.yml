@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: spring-data-redis
+  redis:
+    host: localhost
+    database: 1
